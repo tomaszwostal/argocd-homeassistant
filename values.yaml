@@ -1,0 +1,16 @@
+home-assistant:
+    strategyType: RollingUpdate
+
+    ingress:
+        enabled: false
+        annotations: {}
+        # kubernetes.io/ingress.class: nginx
+        kubernetes:io/ingress.class: voyager
+        # kubernetes.io/tls-acme: "true"
+        path: /
+        hosts:
+            - home-assistant.itomm.tech
+        tls: []
+        #  - secretName: home-assistant-tls
+        #    hosts:
+        #      - home-assistant.local
